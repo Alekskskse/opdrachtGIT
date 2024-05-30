@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Maak een lege array aan met de naam 'getallen'
+let getallen = [];
+
+// Vraag aan de gebruiker hoeveel getallen hij wil ingeven
+let aantal = prompt("Hoeveel getallen wilt u ingeven?");
+
+// Functie expressie voor het controleren van het aantal
+const controleAantal = function(aantal) {
+    if (aantal === null) {
+        document.write("U hebt geannuleerd");
+        return null;
+    } else if (aantal === '') {
+        document.write("U heeft niets ingegeven");
+        return 0;
+    } else if (!isNaN(aantal) && aantal.trim() !== '') {
+        return parseInt(aantal, 10);
+    } else {
+        document.write("Dit is geen correcte ingave.");
+        return 0;
+    }
+};
+
+// Roep de functie 'controleAantal' aan om de invoer te controleren
+aantal = controleAantal(aantal);
+
+// Controleer of 'aantal' groter is dan 0
+if (aantal > 0) {
+    for (let i = 1; i <= aantal; i++) {
+        let getal = prompt(`Geef getal ${i} in:`);
+
+        // Functie expressie voor het controleren van het getal
+        const controleGetal = function(getal) {
+            if (getal === null || getal.trim() === '' || isNaN(getal)) {
+                return "fout";
+            } else {
+                return parseFloat(getal);
+            }
+        };
+
+        // Voeg het gecontroleerde getal toe aan de array 'getallen'
+        getallen.push(controleGetal(getal));
+    }
+
+    // Schrijf de array 'getallen' naar het document
+    document.write(`Ingevoerde getallen: ${getallen.join(', ')}`);
+} else {
+    // Als 'aantal' niet groter is dan 0, doe dan niets meer
+    if (aantal !== null) {
+        // Alleen bericht weergeven als de gebruiker niet heeft geannuleerd
+        document.write("Er is geen geldig aantal getallen opgegeven.");
+    }
+}
+    </script>
+</body>
+</html>

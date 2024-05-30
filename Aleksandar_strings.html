@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>je_naam_strings.html</title>
+</head>
+<body>
+    <script>
+        let voornaam = "Java";
+        let achternaam = "Script";
+        let samengesteld = voornaam + achternaam;
+
+        document.write(`<p>Hallo ${samengesteld.substring(0,4)} ${samengesteld.substring(4,10)}. </p>`)
+
+        let lengt = samengesteld.length;
+
+        document.write(`<p>Jouw naam bevat ${lengt} karakters. </p>`)
+
+        let filename = "javaScriptFrameWork";
+
+        document.write(`<p>De originele filename is: '${filename}'.</p>`)
+
+        filename = filename.toLowerCase();
+
+        document.write(`<p>De filename kan beter in kleine letters getypt worden, dus: '${filename}'.</p>`)
+
+        let filenamepart1 = filename.substring(0,10)
+        let filenamepart2 = filename.substring(10,19)
+
+        document.write(`<p>Als je '${filename}' opsplitst, krijg je : '${filenamepart1}' en '${filenamepart2}'.</p>`)
+
+        let filename5thcharcter = filename.charAt(5)
+
+        document.write(`<p>Het zesde karakter (volgens mensen) in '${filename}' is: '${filename5thcharcter}'.</p>`)
+
+        let email = "jan.klaassen@mail.com";
+        let emailteken = email.indexOf("@");
+
+        document.write(`<p>In '${email}' staat de @ op positie: ${emailteken}.</p>`)
+
+        let naamuitemail = email.substring(0, emailteken);
+
+        document.write(`<p>De naam is dus: '${naamuitemail}'.</p>`)
+
+        let text = "Deze tekst is te lang en zal worden afgekapt op 8 tekens m.b.v. substr().";
+        let afgekaptetekst = text.substr(0, 8);
+
+        document.write(`<p>De originele tekst: '${text}' wordt dan: '${afgekaptetekst}'.</p>`)
+    </script>
+</body>
+</html>

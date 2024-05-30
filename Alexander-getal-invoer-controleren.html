@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getal invoer controleren</title>
+</head>
+<body>
+    <script type="text/javascript">
+     "use strict";
+
+     let getallen = [];
+     let aantal = prompt("Hoeveel getallen wil je ingeven?");
+     
+     const controleAantal = function(aantal) {
+       if (aantal == null) {
+        document.write("U hebt geannuleerd");
+        return null;
+        }
+       else if (aantal == '') {
+        document.write("U heeft niets ingegeven");
+        return 0;
+       } 
+       else if (!isNaN(aantal) && aantal.trim() !== '') {
+        return parseInt(aantal, 10);
+       } 
+       else {
+        document.write("Dit is geen correcte ingave.");
+        return 0;
+       }
+    };
+
+    aantal = controleAantal(aantal);
+
+    if (aantal > 0) {
+        for (let i = 1; i <= aantal; i++) {
+          let getal = prompt(`Geef getal ${i} in:`);
+        
+          const controleGetal = function(getal) {
+                if (getal === null || getal.trim() === '' || isNaN(getal)) {
+                    return "fout";
+                } 
+                else {
+                    return parseFloat(getal);
+                }
+         };
+
+        getallen.push(controleGetal(getal));
+       }
+       document.write(`Ingevoerde getallen: ${getallen.join(', ')}`);
+    } 
+    else {
+        if (aantal !== null) {
+            document.write("Er is geen geldig aantal getallen opgegeven.");
+        }  
+    }
+    </script>
+</body>
+</html>
