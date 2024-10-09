@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksander-tijdschrift-kopen</title>
+</head>
+<body>
+    <script>
+        let naamtijdschrift = prompt("Welke tijdschrift")
+        let prijstijdschrift = prompt("Prijs van de tijdschrift")
+        let aantaltijdschrift = prompt("Hoeveel tijdschriften")
+        let totaleprijs = prijstijdschrift * aantaltijdschrift
+
+        document.write(`<p>De tijdschrift is ${naamtijdschrift}, het type hiervan is ${typeof naamtijdschrift} </p>`)
+        
+        document.write(`<p>De kostprijs van 1 exemplaar is ${prijstijdschrift} euro, het type hiervan is ${typeof prijstijdschrift}</p>`)
+
+        document.write(`<p>Het aantal exemplaren dat je wil kopen is: ${aantaltijdschrift}, het type hiervan is ${typeof prijstijdschrift}</p>`)
+
+        document.write(`<p>De totale prijs is dan ${totaleprijs.toFixed(2)} euro</p>`)
+    </script>
+</body>
+</html>

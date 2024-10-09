@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksandar-Arrays</title>
+</head>
+<body>
+    <script>
+        let maanden = ["januari", "februari", "maart"];
+
+        maanden[3] = "april";
+        maanden[4] = "mei";
+        maanden[5] = "juni";
+
+        maanden.push("juli");
+        
+        maanden.push("augustus", "september", "oktober", "november", "december");
+
+        document.write(`<p>${maanden}</p>`);
+
+        let lengte = maanden.length;
+
+        document.write(`<p>Er zijn ${lengte} maanden in de array.</p>`);
+
+        positieMarch = maanden.indexOf("March");
+
+        document.write(`<p>De maand "March" bevindt zich in de array op positie: ${positieMarch} .</p>`);
+        document.write(`<hr>`);
+
+        let namen = ["Erik", "Sofie", "Adam", "Zorro"];
+
+        namen.sort();
+
+        document.write(`<p>De gesorteerde namen zijn: ${namen}.</p>`);
+
+        let naamZoeken = prompt("Zoek een naam");
+
+        let positie = namen.indexOf(naamZoeken);
+ 
+        document.write(`<p>De naam ${naamZoeken} bevindt zich op positie: ${positie}.</p>`);
+        document.write(`<hr>`);
+
+        let naam = prompt("Voornaam en achternaam")
+
+        let naamArray = naam.split(" ");
+
+        naamArray.reverse();
+
+        naam = naamArray.join(" ");
+
+        document.write(`<p>Jouw naam genoteerd als familienaam voornaam is: ${naam}.</p>`);
+
+    </script>
+</body>
+</html>

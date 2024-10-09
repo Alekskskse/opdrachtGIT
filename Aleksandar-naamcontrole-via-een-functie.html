@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naamcontrole via een functie</title>
+</head>
+<body>
+    <script>
+        let voornaam;
+        let achternaam;
+
+        function controle(naam) {
+            if (naam == null) {
+              document.write("Er is geannuleerd.<br>");
+              return false;
+            }
+            else if (naam.length == 0) {
+              document.write("Er is niets ingegeven.<br>");
+              return false;
+            }
+            else if (naam.length < 2) {
+              document.write("Er zijn minder dan 2 karakters ingegeven.<br>");
+              return false;
+            }
+            else {
+            return naam.charAt(0).toUpperCase() + naam.slice(1);
+            }
+        }
+        voornaam = prompt("Wat is je voornaam?");
+        voornaam = controle(voornaam);
+
+        if (voornaam !== false) {
+           achternaam = prompt("Wat is je achternaam?");
+           achternaam = controle(achternaam);
+           if (achternaam !== false) {
+              document.write(`Hey ${voornaam} ${achternaam}.`);
+            }
+        }
+    </script>
+</body>
+</html>
